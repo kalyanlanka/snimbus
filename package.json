@@ -1,0 +1,9 @@
+{
+	"name" : "SNimbus_Website",
+	"version" : "0.0.1",
+	"description" : "SNimbus Website",
+	"dependencies" : {
+		"restify" : "~2.0"
+	}
+
+}
