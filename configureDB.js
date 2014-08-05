@@ -3,7 +3,7 @@ var mongoUri = process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
   'mongodb://localhost/leadgen';
 
-mongoosed.connect(mongoUri);
+mongoose.connect(mongoUri);
 var Schema = mongoose.Schema;
 
 var LeadSchema = new Schema({name: String, 
