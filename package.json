@@ -5,9 +5,10 @@
   "main": "apps.js",
   "dependencies": {
     "dtrace": "0.0.0",
+    "dtrace-provider": "^0.2.8",
+    "extsprintf": "^1.2.0",
     "mongodb": "^1.4.8",
     "mongoose": "^3.8.14",
-    "dtrace-provider": "^0.2.8",
     "restify": "~2.0"
   },
   "repository": {
