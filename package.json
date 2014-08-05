@@ -1,9 +1,19 @@
 {
-	"name" : "SNimbus_Website",
-	"version" : "0.0.1",
-	"description" : "SNimbus Website",
-	"dependencies" : {
-		"restify" : "~2.0"
-	}
-
+  "name": "SNimbus_Website",
+  "version": "0.0.1",
+  "description": "SNimbus Website",
+  "main": "apps.js",
+  "dependencies": {
+    "dtrace": "0.0.0",
+    "mongodb": "^1.4.8",
+    "mongoose": "^3.8.14",
+    "restify": "~2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kalyanlanka/snimbus.git"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
 }
