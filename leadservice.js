@@ -1,12 +1,20 @@
 var restify = require('restify');
+var mongodb = require('mongodb');
+var Lead = require('./configureDB');
 
-var leadObj = {};
 
 function leadGeneration(req,res,next){
 	console.log(req.body);
+	var lead = new Lead(req.body);
+	console.log('created lead');
+	lead.save(function(err){
+		if (err) console.log(err);
+		console.log('completed saving');
+	});
+	return next();
 }
 
-var server = restify.createServer();
+var server = restify.createServer({name : 'SNimbus Lead Generation'});
 server.use(restify.urlEncodedBodyParser({ mapParams : false }));
 server.use(restify.acceptParser(server.acceptable));
 server.post('/lead',leadGeneration);
