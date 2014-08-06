@@ -8,12 +8,26 @@ function leadGeneration(req,res,next){
 	var lead = new Lead(req.body);
 	console.log('created lead');
 	lead.save(function(err){
-		if (err) console.log(err);
-		console.log('completed saving');
+	res.content = "json";
+	if (err) {
+		console.log(err);
+		res.status(400,{"Error occured submitting your request.  The site administrator has been notified,  Thank you for your interest and we will get back to you shortly"});
+	} else {
+		
+		res.status(200,{"messsage":"Thank you for your interest.  We will get back to you shortly"});
+			
+	}
+
+		
+
 	});
 	return next();
 }
 
+
+function buildSuccessResponse(res){
+	res.send
+}
 var server = restify.createServer({name : 'SNimbus Lead Generation'});
 server.use(restify.urlEncodedBodyParser({ mapParams : false }));
 server.use(restify.acceptParser(server.acceptable));

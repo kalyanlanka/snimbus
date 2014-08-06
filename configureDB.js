@@ -16,13 +16,3 @@ mongoose.model('Lead',LeadSchema);
 
 var Lead = mongoose.model('Lead');
 module.exports = Lead;
-
-
-
-//var lead = new Lead({name : 'Kitty kat'});
-
-//kitty.save(function(err){
-//	if (err){
-//		console.log('error occured');
-//	}
-//});
