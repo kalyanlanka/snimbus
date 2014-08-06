@@ -11,7 +11,7 @@ function leadGeneration(req,res,next){
 	res.content = "json";
 	if (err) {
 		console.log(err);
-		res.status(400,{"Error occured submitting your request.  The site administrator has been notified,  Thank you for your interest and we will get back to you shortly"});
+		res.status(400,{"message" : "Error occured submitting your request.  The site administrator has been notified,  Thank you for your interest and we will get back to you shortly"});
 	} else {
 		
 		res.status(200,{"messsage":"Thank you for your interest.  We will get back to you shortly"});
