@@ -9,8 +9,11 @@ function leadGeneration(req,res,next){
 	console.log('created lead');
 	lead.save(function(err){
 	res.content = "json";
+	res.setHeader('Access-Control-Allow-Origin','*');
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
 	if (err) {
 		console.log(err);
+
 		res.send(400,JSON.stringify({"message" : "Error occured submitting your request.  The site administrator has been notified,  Thank you for your interest and we will get back to you shortly"}));
 	} else {
 		
@@ -32,7 +35,7 @@ var server = restify.createServer({name : 'SNimbus Lead Generation'});
 server.use(restify.urlEncodedBodyParser({ mapParams : false }));
 server.use(restify.acceptParser(server.acceptable));
 server.post('/lead',leadGeneration);
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5000;
 server.listen(port,function(){
 	console.log('%s listening at %s', server.name, server.url);
 });
